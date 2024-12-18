@@ -16,7 +16,7 @@ class RoleMiddleware
     public function handle(Request $request, Closure $next, $role): Response
     {
 
-        if (! $request->user()->usertype !== $role) {
+        if ( $request->user()->usertype !== $role) {
             abort(403);
         }
 
