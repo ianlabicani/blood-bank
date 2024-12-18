@@ -10,9 +10,11 @@ class DashboardController extends Controller
     public function index()
     {
         if (Auth::user()->usertype === 'admin') {
-            return redirect()->route('admin.index');
+
+            return view('admin.dashboard');
         } else {
-            return redirect()->route('user.index');
+            
+            return view('user.dashboard');  
         }
     }
 }
