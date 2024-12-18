@@ -45,4 +45,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function redBloodCells()
+    {
+        return $this->hasMany(RedBloodCell::class, 'donor_id');
+    }
+
 }

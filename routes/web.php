@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RedBloodCellController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,7 +34,12 @@ Route::prefix('admin')
     });
 
 Route::prefix('user')
+    ->name('user.')
     ->middleware(['auth', 'role:user'])
     ->group(function () {
         Route::redirect('/', '/dashboard');
+        Route::get('seek', function () {
+            return 'User Seek';
+        })->name('seek');
+        Route::resource('red-blood-cells', RedBloodCellController::class);
     });
