@@ -27,13 +27,13 @@ Route::get('dashboard', [DashboardController::class, 'index'])
     ->name('dashboard');
 
 Route::prefix('admin')
-    ->middleware(['auth', 'admin'])
+    ->middleware(['auth', 'role:admin'])
     ->group(function () {
         Route::redirect('/', '/dashboard');
     });
 
 Route::prefix('user')
-    ->middleware(['auth', 'user'])
+    ->middleware(['auth', 'role:user'])
     ->group(function () {
         Route::redirect('/', '/dashboard');
     });
