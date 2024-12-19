@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RedBloodCellController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\WhiteBloodCellController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -42,4 +43,5 @@ Route::prefix('user')
             return 'User Seek';
         })->name('seek');
         Route::resource('red-blood-cells', RedBloodCellController::class);
+        Route::resource('white-blood-cells', WhiteBloodCellController::class);
     });

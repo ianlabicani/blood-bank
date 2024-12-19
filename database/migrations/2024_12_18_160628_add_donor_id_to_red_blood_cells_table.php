@@ -9,10 +9,7 @@ class AddDonorIdToRedBloodCellsTable extends Migration
     public function up(): void
     {
         Schema::table('red_blood_cells', function (Blueprint $table) {
-            // Add the donor_id foreign key column
-            $table->foreignId('donor_id') // Foreign key
-                ->constrained('users') // Reference to the 'users' table
-                ->onDelete('cascade'); // Optionally delete blood records if the user is deleted
+            $table->foreignId('donor_id')->constrained('users')->onDelete('cascade'); 
         });
     }
 
