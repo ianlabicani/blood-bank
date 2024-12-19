@@ -38,9 +38,10 @@
                                     <x-dropdown-link :href="route('user.red-blood-cells.index')" :active="request()->routeIs('user.red-blood-cells.index')">
                                         {{ __('Red Blood Cells') }}
                                     </x-dropdown-link>
-                                    {{-- <x-dropdown-link :href="route('user.seek')" :active="request()->routeIs('dashboard')">
+                                    <x-dropdown-link :href="route('user.white-blood-cells.index')" :active="request()->routeIs('user.white-blood-cells.index')">
                                         {{ __('White Blood Cells') }}
                                     </x-dropdown-link>
+                                    {{-- 
                                     <x-dropdown-link :href="route('user.seek')" :active="request()->routeIs('dashboard')">
                                         {{ __('Platelets') }}
                                     </x-dropdown-link>
