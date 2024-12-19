@@ -95,6 +95,11 @@
                         @endforeach
                     </tbody>
                 </table>
+                <!-- Pagination Links -->
+                <div class="p-4">
+                    {{ $whiteBloodCells->links() }}
+                </div>
+
             </div>
         </div>
     </div>

@@ -96,6 +96,11 @@
                         @endforeach
                     </tbody>
                 </table>
+
+                <div class="p-4">
+                    {{ $redBloodCells->links() }}
+                </div>
+
             </div>
         </div>
     </div>

@@ -13,8 +13,8 @@ class WhiteBloodCellController extends Controller
      */
     public function index()
     {
-        $whiteBloodCells = WhiteBloodCell::with('donor')->get();
-        $totalByType = $whiteBloodCells->groupBy('type')->map(function ($group) {
+        $whiteBloodCells = WhiteBloodCell::with('donor')->paginate(10);
+        $totalByType = WhiteBloodCell::all()->groupBy('type')->map(function ($group) {
             return $group->sum('quantity');
         });
 

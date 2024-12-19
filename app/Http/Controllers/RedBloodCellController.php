@@ -13,8 +13,8 @@ class RedBloodCellController extends Controller
      */
     public function index()
     {
-        $redBloodCells = RedBloodCell::with('donor')->get();
-        $totalByType = $redBloodCells->groupBy('type')->map(function ($group) {
+        $redBloodCells = RedBloodCell::with('donor')->paginate(10);
+        $totalByType = RedBloodCell::all()->groupBy('type')->map(function ($group) {
             return $group->sum('quantity');
         });
 
